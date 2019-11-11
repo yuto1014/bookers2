@@ -1,0 +1,24 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.h1 {
+	font-size: 36px;
+}
+.glyphicon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+}
+.btn-info {
+	background-color: #5bc0de;
+	border-color: #46b8da;
+}
+.btn-success {
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}

@@ -1,0 +1,24 @@
+<%= render 'books/list', book: @book %>
+
+<div class="col-xs-9">
+  <h2>Users</h2>
+  <table class="table table-striped">
+  <thead>
+  	<tr>
+  		<th>image</th>
+  		<th>name</th>
+  		<th colspan="3"></th>
+  	</tr>
+  </thead>
+  <tbody>
+  	<% @users.each do |user| %>
+  	<tr>
+  		<td><%= attachment_image_tag @book.user, :profile_image, fallback: "no_image.jpg", size: "30x30" %>
+  		</td>
+  		<td><%= user.name %></td>
+  		<td><%= link_to "Show", user_path(user.id) %></td>
+  	</tr>
+  	<% end %>
+  </tbody>
+</table>
+</div>
