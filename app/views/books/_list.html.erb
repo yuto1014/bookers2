@@ -31,10 +31,10 @@
               <div class="row">
 
                 <% if @user.id == current_user.id %>
-                <p><%= link_to "", edit_user_path(current_user), class:"col-xs-12 btn btn-default glyphicon-wrench edit" %>
+                <p><%= link_to "", edit_user_path(current_user), class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench edit" %>
               </p>
                 <% else %>
-                <p><%= link_to "", user_path(current_user), class:"col-xs-12 btn btn-default glyphicon-wrench edit" %>
+                <p><%= link_to "", user_path(current_user), class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench edit" %>
               </p>
               <% end %>
               </div>

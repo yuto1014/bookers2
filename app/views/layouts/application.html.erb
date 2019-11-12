@@ -13,11 +13,11 @@
 <header>
       <div class="container clearfix">
         <nav class="navbar-left">
-          <span>Bookers</span>
+          <span class="title">Bookers</span>
         </nav>
 
         <nav>
-          <ul class="navbar-right">
+          <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
             <li class="list">
             <%= link_to "Home", user_path(current_user.id), class:"glyphicon glyphicon-home home" %>
@@ -32,28 +32,24 @@
             <%= link_to "logout", destroy_user_session_path, class:"glyphicon glyphicon-log-out logout" ,method: :delete %>
           </li>
           <% else %>
-          <li class="list">
-            <%= link_to "Home", root_path, class:"glyphicon glyphicon-home" %>
+          <li>
+            <a class="glyphicon glyphicon-home home" href="/">
+            Home</a>
           </li>
-          <li class="list">
-            <%= link_to "About", home_about_path, class:"glyphicon glyphicon-link about" %>
+          <li>
+            <a class="glyphicon glyphicon-link about" href="/home/about"> About</a>
           </li>
-          <li class="list">
-            <%= link_to "sign up", new_user_registration_path, class:"glyphicon glyphicon-edit sign_up" %>
+          <li>
+            <a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"> sign up</a>
           </li>
-          <li class="list">
-            <%= link_to "login", new_user_session_path, class:"glyphicon glyphicon-log-in sign_in" %>
+          <li>
+            <a class="glyphicon glyphicon-log-in sign_in" href="/users/sign_in"> login</a>
           </li>
           <% end %>
         </ul>
         </nav>
       </div>
     </header>
-    <div class="flash">
-  <% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "#{key}") %>
-  <% end %>
-</body>
 
     <%= yield %>
   </body>

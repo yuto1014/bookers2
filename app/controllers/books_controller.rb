@@ -3,6 +3,7 @@ before_action :authenticate_user!, only: [:new, :create, :index, :show, :edit, :
 before_action :correct_user, only: [:edit, :update]
 
 	def top
+		flash[:success] = 'Signed out successfully'
 	end
 
 	def about
