@@ -45,7 +45,7 @@
               </div>
 
             <h2>New book</h2>
-                <%= form_for (@book) do |f| %>
+                <%= form_for (@books) do |f| %>
 
                   <h4>Title</h4>
                   <%= f.text_field :title %>
@@ -65,12 +65,12 @@
     <tbody>
       <tr>
         <td><%= attachment_image_tag @book.user, :profile_image, fallback: "no_image.jpg", size: "30x30" %><br>
-          <%= link_to "#{@book.user.name}", user_path(@book.user.id) %>
+          <%= link_to "#{@user.name}", user_path(@user.id) %>
       </td>
       <td><%= link_to "#{@book.title}", book_path(@book.id) %>
       </td>
       <td><%= @book.body %></td>
-      <% if @book.user == current_user %>
+      <% if @user == current_user %>
       <td><%= link_to "Edit", edit_book_path(@book), class:"btn-sm btn-success" %></td>
       <td><%= link_to "Destroy", book_path(@book), method: :delete, class:"btn-sm btn-danger" %></td>
       <% end %>
